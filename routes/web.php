@@ -20,6 +20,10 @@ Route::get('/test', [HomeController::class, 'test']); // memakai controller jika
 
 Route::get('/test/{id}', [HomeController::class, 'test']); // memakai controller yang ada request cara(localhost/test/1) jadi id bernilai 1
 
+Route::get('/add', [HomeController::class, 'tambah']);
+
+Route::post('/save', [HomeController::class, 'simpan']); // memakai method POST (request)
+
 Route::get('/mytry', function () {
 
     $nama = 'Putri';

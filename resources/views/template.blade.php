@@ -29,6 +29,12 @@
                     <li class="nav-item">
                         <a class="nav-link" href="/mycontact">Contact Me</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/add">Input Data</a>
+                    </li>
+                    {{-- <li class="nav-item">
+                        <a class="nav-link" href="/mycontact">Contact Me</a>
+                    </li> --}}
                 </ul>
               </div>
             </div>
