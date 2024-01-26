@@ -24,6 +24,12 @@ Route::get('/add', [HomeController::class, 'tambah']);
 
 Route::post('/save', [HomeController::class, 'simpan']); // memakai method POST (request)
 
+Route::get('/test_query_builder', [HomeController::class, 'test_query_builder']); // hanya test data
+
+Route::get('/test_eloquent', [HomeController::class, 'test_eloquent']);     // hanya test data
+
+Route::get('/makanan', [HomeController::class, 'view_makanan']);     // membuat path makanan, class view_makanan
+
 Route::get('/mytry', function () {
 
     $nama = 'Putri';

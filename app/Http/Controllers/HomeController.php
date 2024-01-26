@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use App\Models\Makanan;
+use App\Models\Kategori;
 
 class HomeController extends Controller
 {
@@ -36,5 +39,55 @@ class HomeController extends Controller
             'harga' => $harga,
             'keterangan' => $ket,
         ]);
+    }
+
+    public function view_makanan(){             // klas view_makanan (web)
+        $makanans = Makanan::all();             // membuat nm variabel($makanans)  Makanan(file model) all(menampilkan semua isi)
+    
+        return view('makanan', [                // dikembalikan ke file makanan blade
+            'foods' => $makanans                // dikasi nm foods
+        ]);
+    }
+
+    public function test_eloquent()
+    {
+        // select data
+        // $makanans = Makanan::all();
+        // dd($makanans);
+
+        // insert data tanpa nm variabel
+        // Makanan::create([
+        //     'kode_makanan' => 'M002',
+        //     'nama' => 'Mie Ayam',
+        //     'kategori' => 'Makanan',
+        //     'harga' => 12000,
+        //     'ket' => 'Ada',
+        // ]);
+
+        //insert data dengan nm variabel
+        // $makanan = new Makanan;
+        // $makanan->kode_makanan = 'M003';
+        // $makanan->nama = 'Sate';
+        // $makanan->kategori = 'Makanan';
+        // $makanan->harga = 11000;
+        // $makanan->ket = 'Ada';
+        // $makanan->save();
+
+        //hapus data langsung cari
+        Makanan::find('M001')->delete();
+
+        // hapus data dengan memasukkan ke variabel
+        // $makanan = Makanan::find('M002');
+        // $makanan->delete();
+
+        //update data
+        //     $makanan = Makanan::find('M003');
+        //     $makanan->nama = 'Kuaci';
+        //     $makanan->kategori = 'Snack';
+        //     $makanan->harga = 5000;
+        //     $makanan->ket = 'Kosong';
+        //     $makanan->save();
+
+            return 'Data Masuk';
     }
 }
