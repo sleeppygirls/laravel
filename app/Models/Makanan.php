@@ -12,7 +12,7 @@ class Makanan extends Model
     protected $table = 'makanans';             // memanggil nama table
 
     protected $primaryKey = 'kode_makanan';    // primary key ny
-
+    protected $keyType = 'string';              // merubah type data agar terpanggil
     protected $fillable = [                     // nama kolom yang dapat di edit
         'kode_makanan',
         'nama',

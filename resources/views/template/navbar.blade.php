@@ -12,10 +12,10 @@
                 <a class="nav-link" href="/">Home</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/mymenu">Food</a>
+                <a class="nav-link" href="/menu">Food</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/mykategori">Kategori</a>
+                <a class="nav-link" href="/kategori">Kategori</a>
             </li>
         </ul>
       </div>
