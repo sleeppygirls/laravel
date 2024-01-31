@@ -15,7 +15,7 @@ return new class extends Migration
             $table->string('kode_makanan')->primary();
             $table->text('nama')->nullable();
             $table->text('kategori')->nullable();
-            $table->double('harga')->default(0);
+            $table->double('harga')->nullable();
             $table->text('ket')->nullable();
             $table->timestamps();
         });

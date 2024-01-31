@@ -19,10 +19,10 @@
 .navbar-toggler:focus{
     box-shadow: 0 0 0 0.25rem #167AB2;
 }
-.container{
+/* .container{
 
     background-color: #ffe7f8;
-}
+} */
 .nav-link{
     color: rgb(214, 2, 158);
     font-weight: bold;

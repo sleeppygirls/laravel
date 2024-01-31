@@ -11,7 +11,7 @@
 <body>
     
     @include('template.navbar')
-    <div class="content" style="min-height: 83vh">
+    <div class="content" style="min-height: 75vh">
         @yield('content')
     </div>
 

@@ -3,22 +3,21 @@
 @section('judul', 'Putris Kategori') {{-- 1: memanggil yield, 2: isinya --}}
 
 @section('content')
-    <div class="container">
+    <div class="container my-5">
         <div class="row">
             <div class="col-12">
                 <a href="/kategori/add">
-                    <button type="button" class="btn ntn-success">Add</button>
+                    <button type="button" class="btn btn-success">Add</button>
                 </a>
             </div>
         </div>
-    </div>
 
     <div class="row">
         <div class="col-12">
             <table class="table">
                 <thead>
                     <tr>
-                        <th scope="col">Kode_Kategori</th>
+                        <th scope="col">Kode Kategori</th>
                         <th scope="col">Nama</th>
                         <th scope="col">Keterangan</th>
                         <th scope="col">Action</th>
@@ -44,4 +43,6 @@
             </table>
         </div>
     </div>
+    
+</div>
 @endsection

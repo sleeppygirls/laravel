@@ -16,7 +16,7 @@ class KategoriController extends Controller
     public function index(){   // warna kuning class yg dipanggil di route
 
         // query builder (menampilkan semua data)
-        $kategoris = DB::table('kategoris')->get();     // $kategoris(nm variabel)
+        // $kategoris = DB::table('kategoris')->get();     // $kategoris(nm variabel)
 
         // eloquent (menampilkan semua data)
         $kategoris = Kategori::all();               // Kategori(file model yg dibuat)
@@ -34,6 +34,8 @@ class KategoriController extends Controller
     public function edit($id)               // edit(klas yg dibuat di web)
     {                                           // $id(request/parameter)
         $kategori = Kategori::find($id);        // (mencari berdasarkan id(primary key))
+
+        // dd($kategori);
 
         return view('form_kategori', [          // dikembalikan ke form_kategori blade
             'data' => $kategori                 
@@ -53,11 +55,11 @@ class KategoriController extends Controller
             ]);
         } else {
             // Add with query builder
-            DB::table('kategoris')->insert([
-                'kode_kategori' => $req->kode,
-                'nama' => $req->nama,
-                'ket' => $req->ket
-            ]);
+            // DB::table('kategoris')->insert([
+            //     'kode_kategori' => $req->kode,
+            //     'nama' => $req->nama,
+            //     'ket' => $req->ket
+            // ]);
 
             // Add with eloquent 1
             Kategori::create([
@@ -67,26 +69,26 @@ class KategoriController extends Controller
             ]);
 
             // Add with eloquent 2
-            $kategori = new Kategori;
-            $kategori->kode_kategori = $req->kode;
-            $kategori->nama = $req->nama;
-            $kategori->ket = $req->ket;
-            $kategori->save();
+            // $kategori = new Kategori;
+            // $kategori->kode_kategori = $req->kode;
+            // $kategori->nama = $req->nama;
+            // $kategori->ket = $req->ket;
+            // $kategori->save();
         }
 
         return redirect('/kategori');
     }
 
-    public   function delete($id)
+    public function delete($id)
     {
         // query builder
-        DB::table('kategoris')->where('kode_kategori' $id)->delete();
+        // DB::table('kategoris')->where('kode_kategori', $id)->delete();
 
         // eloquent 1
         Kategori::find($id)->delete();
 
         // eloquent 2
-        Kategori::where('kode_kategori', $id)->delete();
+        // Kategori::where('kode_kategori', $id)->delete();
 
         return redirect('/kategori');
     }

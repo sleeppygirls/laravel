@@ -16,7 +16,7 @@ class MenuController extends Controller
     public function index(){   // warna kuning class yg dipanggil di route
 
         // query builder (menampilkan semua data)
-        $makanan = DB::table('makanans')->get();     // $makanan(nm variabel)
+        // $makanan = DB::table('makanans')->get();     // $makanan(nm variabel)
 
         // eloquent (menampilkan semua data)
         $makanan = Makanan::all();               // makanan(file model yg dibuat)
@@ -58,26 +58,28 @@ class MenuController extends Controller
             DB::table('makanans')->insert([
                 'kode_makanan' => $req->kode,
                 'nama' => $req->nama,
-                'ket' => $req->ket
-            ]);
-
-            // Add with eloquent 1
-            Makanan::create([
-                'kode_makanan' => $req->kode,
-                'nama' => $req->nama,
                 'kategori' => $req->kategori,
                 'harga' => $req->harga,
                 'ket' => $req->ket
             ]);
 
+            // Add with eloquent 1
+            // Makanan::create([
+            //     'kode_makanan' => $req->kode,
+            //     'nama' => $req->nama,
+            //     'kategori' => $req->kategori,
+            //     'harga' => $req->harga,
+            //     'ket' => $req->ket
+            // ]);
+
             // Add with eloquent 2
-            $makanan = new Makanan;
-            $makanan->kode_makanan = $req->kode;
-            $makanan->nama = $req->nama;
-            $makanan->kategori = $req->kategori;
-            $makanan->harga = $req->harga;
-            $makanan->ket = $req->ket;
-            $makanan->save();
+            // $makanan = new Makanan;
+            // $makanan->kode_makanan = $req->kode;
+            // $makanan->nama = $req->nama;
+            // $makanan->kategori = $req->kategori;
+            // $makanan->harga = $req->harga;
+            // $makanan->ket = $req->ket;
+            // $makanan->save();
         }
 
         return redirect('/menu');
@@ -86,13 +88,13 @@ class MenuController extends Controller
     public   function delete($id)
     {
         // query builder
-        DB::table('makanans')->where('kode_makanan' $id)->delete();
+        // DB::table('makanans')->where('kode_makanan', $id)->delete();
 
         // eloquent 1
         Makanan::find($id)->delete();
 
         // eloquent 2
-        Makanan::where('kode_makanan', $id)->delete();
+        // Makanan::where('kode_makanan', $id)->delete();
 
         return redirect('/menu');
     }

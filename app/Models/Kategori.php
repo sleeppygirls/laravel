@@ -11,7 +11,7 @@ class Kategori extends Model
 
     protected $table = 'kategoris';             // memanggil nama table
 
-    protected $primarykey = 'kode_kategori';    // primary key ny
+    protected $primaryKey = 'kode_kategori';    // primary key ny
     protected $keyType = 'string';              // merubah type data agar terpanggil
     protected $fillable = [                     // nama kolom yang dapat di edit
         'kode_kategori',
