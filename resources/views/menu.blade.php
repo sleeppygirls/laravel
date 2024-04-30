@@ -1,6 +1,6 @@
 @extends('template.index')
 
-@section('judul', 'Putris Menu') {{-- 1: memanggil yield, 2: isinya --}}
+@section('judul', 'Putri Menu') {{-- 1: memanggil yield, 2: isinya --}}
 
 @section('content')
     <div class="container my-5">
